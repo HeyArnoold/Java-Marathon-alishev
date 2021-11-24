@@ -1,0 +1,38 @@
+package day4;
+
+import java.util.Random;
+
+public class Task4 {
+    public static void main(String[] args) {
+        int [] array = new int[100];
+
+        int num1 = 0;
+        int num2 = 0;
+        int num3 = 0;
+        int numIdx = 0;
+
+        Random rand = new Random();
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = rand.nextInt(10000);
+        }
+
+        int maxSum = 0;
+        int maxSumIdx = 0;
+
+        for (int i = 0; i < array.length-2; i++) {
+            int sum = 0;
+
+            for (int j = i; j < i+3; j++){
+                sum += array[j];
+            }
+            if (sum>maxSum){
+                maxSum = sum;
+                maxSumIdx = i;
+            }
+        }
+        System.out.println("\n");
+        System.out.println(maxSum);
+        System.out.println(maxSumIdx);
+    }
+}
