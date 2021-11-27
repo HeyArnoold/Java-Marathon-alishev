@@ -10,11 +10,13 @@ public class Teacher {
         this.name = name;
         this.course = course;
     }
+
+    Random random = new Random();
+
     public void evaluate (Student student){
         int min = 2;
         int max = 5;
         int diff = max - min;
-        Random random = new Random();
         int i = random.nextInt(diff + 1) + min;
 
         String score = null;
