@@ -6,8 +6,6 @@ public class Task2 {
     public static void main(String[] args) {
         int[] array = new int[100];
 
-        int max = 0;
-        int min = 10000;
         int num0 = 0;
         int sum0 = 0;
 
@@ -16,6 +14,10 @@ public class Task2 {
         for (int i = 0; i < array.length; i++){
             array[i] = random.nextInt(10000);
         }
+
+        int max = 0;
+        int min = 10000;
+
         for (int num:array){
             System.out.print(num+" ");
 
@@ -27,8 +29,6 @@ public class Task2 {
             }
             if (num %10 == 0) {
                 num0++;
-            }
-            if (num %10 == 0) {
                 sum0 = sum0 + num;
             }
         }
