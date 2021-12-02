@@ -18,7 +18,7 @@ public class Rectangle extends Figure{
 
     @Override
     public double perimeter() {
-        double p = 2 * (width * height);
+        double p = 2 * (width + height);
         return p;
     }
 }
