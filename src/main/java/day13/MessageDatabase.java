@@ -11,12 +11,12 @@ public class MessageDatabase {
     }
 
     public static List<Message> getMessages(){
-        return  messages;
+        return messages;
     }
 
     public static void showDialog(User u1, User u2){
         for (Message message : messages) {
-            if (message.getSender() == u1 && message.getReceiver() == u2 || message.getSender() == u2 && message.getReceiver() == u1) {
+            if(u1 == message.getSender() && u2 == message.getReceiver() || u2 == message.getSender() && u1 == message.getReceiver()){
                 System.out.println(message.getSender() + ": " + message.getText());
             }
         }

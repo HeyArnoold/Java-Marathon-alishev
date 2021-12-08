@@ -5,7 +5,7 @@ import java.util.List;
 
 public class User {
     private String username;
-    private List<User> subscriptions; // на кого подписан
+    private List<User> subscriptions; // На кого подписан
 
     public User(String username) {
         this.username = username;
@@ -20,13 +20,13 @@ public class User {
         return subscriptions;
     }
 
-    public void subscribe(User user){
-        this.subscriptions.add(user);
+    public void subscribe(User user) {
+        subscriptions.add(user);
     }
 
     public boolean isSubscribed(User user){
-        for(User user1 : subscriptions){
-            if(user1.getUsername().equals(user.getUsername())){
+        for (User findUser : subscriptions){
+            if(findUser.getUsername().equals(user.getUsername())){
                 return true;
             }
         }
@@ -34,7 +34,7 @@ public class User {
     }
 
     public boolean isFriend(User user){
-        return this.isSubscribed(user) && user.isSubscribed(user);
+        return this.isSubscribed(user) && user.isSubscribed(this);
     }
 
     public void sendMessage(User user, String text){
