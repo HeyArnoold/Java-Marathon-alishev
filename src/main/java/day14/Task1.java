@@ -13,40 +13,33 @@ public class Task1 {
     }
 
     public static void printSumDigits(File file){
-        Scanner scanner = null;
         try {
-            scanner = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден");
-        }
-        String line = scanner.nextLine();
-        String[] numbersString = line.split(" ");
+            Scanner scanner = new Scanner(file);
 
-        int arrayLength = 0;
-        for (int i = 0; i < numbersString.length; i++){
-            arrayLength++;
-        }
-        if (arrayLength != 10) {
-            try {
-                throw new IOException();
-            } catch (IOException e) {
-                System.out.println("Некорректный входной файл");
+            String line = scanner.nextLine();
+            String[] numbersString = line.split(" ");
+
+            int arrayLength = 0;
+            for (int i = 0; i < numbersString.length; i++) {
+                arrayLength++;
             }
-            return;
-        }
+            if (arrayLength != 10) {
+                    throw new IOException();
+            }
 
-        int[] numbers = new int[arrayLength];
-        int counter = 0;
-        for (String number : numbersString) {
-            numbers[counter++] = Integer.parseInt(number);
-        }
+            int number = 0;
+            for (String everyNumber : numbersString) {
+                number += Integer.parseInt(everyNumber);
+            }
 
-        int number = 0;
-        for (int i = 0; i < numbers.length; i++){
-            number += numbers[i];
-        }
-        System.out.println(number);
+            System.out.println(number);
 
-        scanner.close();
+            scanner.close();
+
+        }catch(FileNotFoundException e){
+            System.out.println("Файл не найден");
+        }catch (IOException e) {
+            System.out.println("Некорректный входной файл");
+        }
     }
 }
